@@ -23,7 +23,8 @@ or via bower: <br/>
 ## Dependencies ##
 
 * jQuery >=1.8.x <3.0.0
-* jQuery UI position 
+* jQuery UI position  
+* jQuery-contextMenu
 
 ## Usage ##
 
