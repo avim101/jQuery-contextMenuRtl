@@ -11,7 +11,7 @@ __IMPORTANT: jQuery 3.x.x bracks jQuery UI position. make sure your jQuery versi
   
   js:
     <script src="path_to/jquery.js"></script>
-    <script src="path_to/jquery-ui/jquery-ui.js"></script>
+    <script src="path_to/jquery-ui.js"></script>
     <script src="path_to/jquery.contextMenu.js"></script>
     <script src="path_to/jquery.contextMenuRtl.js"></script>
 ```   
