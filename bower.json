@@ -2,7 +2,7 @@
   "name": "jQuery-contextMenuRtl",
   "homepage": "https://github.com/avim101/jQuery-contextMenuRtl",
   "authors": [
-    "Avi Maslati, <avim101@gmail.com>, https://github.com/avim101/jQuery-contextMenuRtl "
+    "Avi Maslati, <avim101@gmail.com>, https://github.com/avim101"
   ],
   "keywords": [
     "contextmenu", "context-menu", "right-click-menu", "right-click", "navigation", "menu",
@@ -17,7 +17,8 @@
   "license": "MIT",
   "dependencies": {
     "jquery": ">=1.8.x <3.0.0",
-    "jquery-ui": "~1.11.4"
+    "jquery-ui": "~1.11.4",
+    "jQuery-contextMenu": "^2.2.0"
   },
   "ignore": [
     "**/.*",
