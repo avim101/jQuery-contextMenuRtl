@@ -1,5 +1,5 @@
 {
-  "name": "jQuery-contextMenuRtl",
+  "name": "jquery-contextMenu-rtl",
   "homepage": "https://github.com/avim101/jQuery-contextMenuRtl",
   "authors": [
     "Avi Maslati, <avim101@gmail.com>, https://github.com/avim101"
@@ -11,8 +11,8 @@
   ],
   "description": "rtl support for jQuery contextMenu",
   "main": [
-    "dist/jquery.contextMenuRtl.min.js",
-    "dist/jquery.contextMenuRtl.min.css"
+    "jquery.contextMenuRtl.js",
+    "jquery.contextMenuRtl.css"
   ],
   "license": "MIT",
   "dependencies": {
