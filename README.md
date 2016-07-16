@@ -11,7 +11,7 @@ __IMPORTANT: jQuery 3.x.x bracks jQuery UI position. make sure your jQuery versi
   
   js:
     <script src="path_to/jquery.js"></script>
-    <script src="path_to/jquery-ui/jquery-ui.js"></script>
+    <script src="path_to/jquery-ui.js"></script>
     <script src="path_to/jquery.contextMenu.js"></script>
     <script src="path_to/jquery.contextMenuRtl.js"></script>
 ```   
@@ -23,7 +23,8 @@ or via bower: <br/>
 ## Dependencies ##
 
 * jQuery >=1.8.x <3.0.0
-* jQuery UI position 
+* jQuery UI position  
+* jQuery-contextMenu
 
 ## Usage ##
 
@@ -32,7 +33,8 @@ register contextMenu from javascript and set rtl to true :
 ```javascript
 $.contextMenu({
     // define which elements trigger this menu
-    selector: ".context-menu-menu",
+    selector: ".context-menu-selector",
+    //if rtl is set to true context menu and sub menues will be opened from right to left
     rtl:true
     // define the elements of the menu
     items: {
