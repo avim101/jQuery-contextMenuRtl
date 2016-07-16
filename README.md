@@ -3,6 +3,8 @@ jQuery-contextMenuRtl is rtl support for [jQuery-contextMenu](https://github.com
 
 __IMPORTANT: jQuery 3.x.x bracks jQuery UI position. make sure your jQuery version is lower then 3.0.0__
 
+## [Demo](https://avim101.github.io/jQuery-contextMenuRtl) ##
+
 ## Installation ##
 ```html
   style:
