@@ -1,0 +1,42 @@
+/**
+ * @preserve
+ * jQuery contextMenuRtl v0.1.0 - Plugin for contextMenu (http://swisnl.github.io/jQuery-contextMenu/) plugin rtl handling
+ *
+ * Version: v0.1.0
+ *
+ * Authors: Avi Meslati
+ * Web: http://github.com/avim101/jQuery-contextMenuRtl
+ *
+ * Copyright (c) 2016 Avi Meslati
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *   GPL v3 http://opensource.org/licenses/GPL-3.0
+ *
+ * Date: 2016-06-16 15:42:56
+ */
+.context-menu-root[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+
+  .context-menu-submenu:after {
+    border-width: .25em .25em .25em 0;
+    border-color: transparent #2f2f2f transparent transparent;
+    left: .5em;
+    right: auto;
+  }
+
+  .context-menu-item {
+    & > .context-menu-list {
+      left: -5px;
+      right: auto;
+    }
+  }
+
+  .context-menu-icon:before {
+    right: 0;
+    left: auto;
+  }
+
+}
+
