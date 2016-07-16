@@ -1,10 +1,22 @@
-# jQuery-contextMenuRtl #
+## jQuery-contextMenuRtl ##
 jQuery-contextMenuRtl is rtl support for [jQuery-contextMenu](https://github.com/swisnl/jQuery-contextMenu)
 
 __IMPORTANT: jQuery 3.x.x bracks jQuery UI position. make sure your jQuery version is lower then 3.0.0__
 
-
-
+## Installation ##
+```html
+  style:
+    <link rel="stylesheet" href="path_to/jquery.contextMenu.css" />
+    <link rel="stylesheet" href="path_to/jquery.contextMenuRtl.css" />
+  
+  js:
+    <script src="path_to/jquery.js"></script>
+    <script src="path_to/jquery-ui/jquery-ui.js"></script>
+    <script src="path_to/jquery.contextMenu.js"></script>
+    <script src="path_to/jquery.contextMenuRtl.js"></script>
+```   
+or via bower: 
+``` bower install jQuery-contextMenuRtl ```
 
 ## Dependencies ##
 
