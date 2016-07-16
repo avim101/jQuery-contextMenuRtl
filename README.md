@@ -33,7 +33,8 @@ register contextMenu from javascript and set rtl to true :
 ```javascript
 $.contextMenu({
     // define which elements trigger this menu
-    selector: ".context-menu-menu",
+    selector: ".context-menu-selector",
+    //if rtl is set to true context menu and sub menues will be opened from right to left
     rtl:true
     // define the elements of the menu
     items: {
