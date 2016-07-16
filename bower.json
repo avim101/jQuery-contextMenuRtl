@@ -4,12 +4,21 @@
   "authors": [
     "Avi Maslati, <avim101@gmail.com>, https://github.com/avim101/jQuery-contextMenuRtl "
   ],
+  "keywords": [
+    "contextmenu", "context-menu", "right-click-menu", "right-click", "navigation", "menu",
+    "contextmenurtl", "context-menu-rtl", "right-click-menu-rtl", "navigation rtl", "menu rtl",
+    "navigation-rtl","menu-rtl","contextmenu rtl","context-menu rtl"
+  ],
   "description": "rtl support for jQuery contextMenu",
   "main": [
     "dist/jquery.contextMenuRtl.min.js",
     "dist/jquery.contextMenuRtl.min.css"
   ],
   "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.8.x <3.0.0",
+    "jquery-ui": "~1.11.4"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
