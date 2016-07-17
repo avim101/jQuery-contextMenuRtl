@@ -23,73 +23,52 @@ angular.module('jqueryContextmenuRtlApp.util', []);
 
 'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (function () {
-  var MainController = function () {
-    function MainController($http) {
-      _classCallCheck(this, MainController);
+  var MainController = function MainController() {
+    _classCallCheck(this, MainController);
 
-      $('pre code').each(function (i, block) {
-        hljs.highlightBlock(block);
-      });
-
-      $.contextMenu({
-        selector: '.context-menu-one',
-        rtl: true,
-        trigger: 'left',
-        callback: function callback(key, options) {
-          var m = "clicked: " + key;
-          window.console && console.log(m) || alert(m);
+    $.contextMenu({
+      selector: '.context-menu-one',
+      rtl: true,
+      trigger: 'left',
+      callback: function callback(key, options) {
+        var m = "clicked: " + key;
+        window.console && console.log(m) || alert(m);
+      },
+      items: {
+        "edit": { "name": "ערוך", "icon": "edit" },
+        "cut": { "name": "גזור", "icon": "cut" },
+        "sep1": "---------",
+        "quit": { "name": "סגור", "icon": "quit" },
+        "sep2": "---------",
+        "fold1": {
+          "name": "תת קבוצה",
+          "items": {
+            "fold1-key1": { "name": "תקייה 1" },
+            "fold2": {
+              "name": "תת קבוצה 2",
+              "items": {
+                "fold2-key1": { "name": "אלפא" },
+                "fold2-key2": { "name": "בטא" },
+                "fold2-key3": { "name": "גמא" }
+              }
+            },
+            "fold1-key3": { "name": "דלתא" }
+          }
         },
-        items: {
-          "edit": { "name": "ערוך", "icon": "edit" },
-          "cut": { "name": "גזור", "icon": "cut" },
-          "sep1": "---------",
-          "quit": { "name": "סגור", "icon": "quit" },
-          "sep2": "---------",
-          "fold1": {
-            "name": "תת קבוצה",
-            "items": {
-              "fold1-key1": { "name": "תקייה 1" },
-              "fold2": {
-                "name": "תת קבוצה 2",
-                "items": {
-                  "fold2-key1": { "name": "אלפא" },
-                  "fold2-key2": { "name": "בטא" },
-                  "fold2-key3": { "name": "גמא" }
-                }
-              },
-              "fold1-key3": { "name": "דלתא" }
-            }
-          },
-          "fold1a": {
-            "name": "שונות",
-            "items": {
-              "fold1a-key1": { "name": "אפסילון" },
-              "fold1a-key2": { "name": "קפא" },
-              "fold1a-key3": { "name": "אומגה" }
-            }
+        "fold1a": {
+          "name": "שונות",
+          "items": {
+            "fold1a-key1": { "name": "אפסילון" },
+            "fold1a-key2": { "name": "קפא" },
+            "fold1a-key3": { "name": "אומגה" }
           }
         }
-      });
-    }
-
-    _createClass(MainController, [{
-      key: '$onInit',
-      value: function $onInit() {
-        var _this = this;
-
-        this.$http.get('/api/things').then(function (response) {
-          _this.awesomeThings = response.data;
-        });
       }
-    }]);
-
-    return MainController;
-  }();
+    });
+  };
 
   angular.module('jqueryContextmenuRtlApp').component('main', {
     templateUrl: 'app/main/main.html',
@@ -299,7 +278,7 @@ angular.module('jqueryContextmenuRtlApp').directive('navbar', function () {
 })();
 //# sourceMappingURL=util.service.js.map
 
-angular.module("jqueryContextmenuRtlApp").run(["$templateCache", function($templateCache) {$templateCache.put("components/footer/footer.html","<div class=\"container\">\n  <p>Angular Fullstack v3.7.5 |\n    <a href=\"https://twitter.com/tyhenkel\">@tyhenkel</a> |\n    <a href=\"https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open\">Issues</a>\n  </p>\n</div>\n");
-$templateCache.put("app/main/main.html","<navbar></navbar>\n\n<!-- Page Content -->\n<div class=\"container\">\n\n  <div class=\"row\">\n\n    <div class=\"col-md-12\">\n      <div class=\"col-xs-12\">\n        <h2>RTL Support for jQuery contextMenu</h2>\n        <hr>\n        <a href=\"https://swisnl.github.io/jQuery-contextMenu/\" target=\"_blank\">\n          <h4>jQuery contextMenu Full Documentation</h4>\n        </a>\n      </div>\n      <div class=\"col-xs-12\" style=\"margin: 15px 0;\">\n        <button type=\"button\" class=\"context-menu-one btn btn-default btn-lg pull-right\">click me</button>\n      </div>\n      <div class=\"col-xs-12\">\n        <pre class=\"prettyprint language-json prettyprinted\" data-type=\"json\"><code>\n$(<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">()</span></span>{\n    <span class=\"hljs-comment\"></span>\n    $.contextMenu({\n        selector: <span class=\"str\">\'.context-menu-one\'</span>,\n        rtl: <span class=\"str\">true</span>,\n        callback: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">(key, options)</span> </span>{\n            <span class=\"hljs-keyword\">var</span> m = <span class=\"str\">\"clicked: \"</span> + key;\n            <span class=\"hljs-built_in\">window</span>.console &amp;&amp; <span class=\"hljs-built_in\">console</span>.log(m) || alert(m);\n        },\n        items: {\n            <span class=\"str\">\"edit\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"ערוך\"</span>, <span\n          class=\"str\">\"icon\"</span>: <span class=\"str\">\"edit\"</span>},\n            <span class=\"str\">\"cut\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"גזור\"</span>, <span\n          class=\"str\">\"icon\"</span>: <span class=\"str\">\"cut\"</span>},\n            <span class=\"str\">\"sep1\"</span>: <span class=\"str\">\"---------\"</span>,\n            <span class=\"str\">\"quit\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"סגור\"</span>, <span\n          class=\"str\">\"icon\"</span>: <span class=\"str\">\"quit\"</span>},\n            <span class=\"str\">\"sep2\"</span>: <span class=\"str\">\"---------\"</span>,\n            <span class=\"str\">\"fold1\"</span>: {\n                <span class=\"str\">\"name\"</span>: <span class=\"str\">\"תת קבוצה\"</span>,\n                <span class=\"str\">\"items\"</span>: {\n                    <span class=\"str\">\"fold1-key1\"</span>: {<span class=\"str\">\"name\"</span>: <span\n          class=\"str\">\"תקייה 1\"</span>},\n                    <span class=\"str\">\"fold2\"</span>: {\n                        <span class=\"str\">\"name\"</span>: <span class=\"str\">\"תת קבוצה 2\"</span>,\n                        <span class=\"str\">\"items\"</span>: {\n                            <span class=\"str\">\"fold2-key1\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"אלפא\"</span>},\n                            <span class=\"str\">\"fold2-key2\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"בטא\"</span>},\n                            <span class=\"str\">\"fold2-key3\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"גמא\"</span>}\n                        }\n                    },\n                    <span class=\"str\">\"fold1-key3\"</span>: {<span class=\"str\">\"name\"</span>: <span\n          class=\"str\">\"דלתא\"</span>}\n                }\n            },\n            <span class=\"str\">\"fold1a\"</span>: {\n                <span class=\"str\">\"name\"</span>: <span class=\"str\">\"שונות\"</span>,\n                <span class=\"str\">\"items\"</span>: {\n                    <span class=\"str\">\"fold1a-key1\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"אפסילון\"</span>},\n                    <span class=\"str\">\"fold1a-key2\"</span>: {<span class=\"str\">\"name\"</span>: <span\n          class=\"str\">\"קפא\"</span>},\n                    <span class=\"str\">\"fold1a-key3\"</span>: {<span class=\"str\">\"name\"</span>: <span\n          class=\"str\">\"אומגה\"</span>}\n                }\n            }\n        }\n    });\n});\n</code></pre>\n      </div>\n\n    </div>\n\n  </div>\n\n</div>\n<!-- /.container -->\n\n<div class=\"container\">\n\n  <!-- Footer -->\n  <footer>\n    <div class=\"row\">\n      <div class=\"col-lg-12\">\n        <p>Copyright &copy; Your Website 2014</p>\n      </div>\n    </div>\n  </footer>\n\n</div>\n<!-- /.container -->\n");
+angular.module("jqueryContextmenuRtlApp").run(["$templateCache", function($templateCache) {$templateCache.put("app/main/main.html","<navbar></navbar>\n\n<!-- Page Content -->\n<div class=\"container\">\n\n  <div class=\"row\">\n\n    <div class=\"col-md-12\">\n      <div class=\"col-xs-12\">\n        <h2>RTL Support for jQuery contextMenu</h2>\n        <hr>\n        <a href=\"https://swisnl.github.io/jQuery-contextMenu/\" target=\"_blank\">\n          <h4>jQuery contextMenu Full Documentation</h4>\n        </a>\n      </div>\n      <div class=\"col-xs-12\" style=\"margin: 15px 0;\">\n        <button type=\"button\" class=\"context-menu-one btn btn-default btn-lg pull-right\">click me</button>\n      </div>\n      <div class=\"col-xs-12\">\n        <pre class=\"prettyprint language-json prettyprinted\" data-type=\"json\"><code>\n$(<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">()</span></span>{\n    <span class=\"hljs-comment\"></span>\n    $.contextMenu({\n        selector: <span class=\"str\">\'.context-menu-one\'</span>,\n        rtl: <span class=\"str\">true</span>,\n        callback: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">(key, options)</span> </span>{\n            <span class=\"hljs-keyword\">var</span> m = <span class=\"str\">\"clicked: \"</span> + key;\n            <span class=\"hljs-built_in\">window</span>.console &amp;&amp; <span class=\"hljs-built_in\">console</span>.log(m) || alert(m);\n        },\n        items: {\n            <span class=\"str\">\"edit\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"ערוך\"</span>, <span\n          class=\"str\">\"icon\"</span>: <span class=\"str\">\"edit\"</span>},\n            <span class=\"str\">\"cut\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"גזור\"</span>, <span\n          class=\"str\">\"icon\"</span>: <span class=\"str\">\"cut\"</span>},\n            <span class=\"str\">\"sep1\"</span>: <span class=\"str\">\"---------\"</span>,\n            <span class=\"str\">\"quit\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"סגור\"</span>, <span\n          class=\"str\">\"icon\"</span>: <span class=\"str\">\"quit\"</span>},\n            <span class=\"str\">\"sep2\"</span>: <span class=\"str\">\"---------\"</span>,\n            <span class=\"str\">\"fold1\"</span>: {\n                <span class=\"str\">\"name\"</span>: <span class=\"str\">\"תת קבוצה\"</span>,\n                <span class=\"str\">\"items\"</span>: {\n                    <span class=\"str\">\"fold1-key1\"</span>: {<span class=\"str\">\"name\"</span>: <span\n          class=\"str\">\"תקייה 1\"</span>},\n                    <span class=\"str\">\"fold2\"</span>: {\n                        <span class=\"str\">\"name\"</span>: <span class=\"str\">\"תת קבוצה 2\"</span>,\n                        <span class=\"str\">\"items\"</span>: {\n                            <span class=\"str\">\"fold2-key1\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"אלפא\"</span>},\n                            <span class=\"str\">\"fold2-key2\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"בטא\"</span>},\n                            <span class=\"str\">\"fold2-key3\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"גמא\"</span>}\n                        }\n                    },\n                    <span class=\"str\">\"fold1-key3\"</span>: {<span class=\"str\">\"name\"</span>: <span\n          class=\"str\">\"דלתא\"</span>}\n                }\n            },\n            <span class=\"str\">\"fold1a\"</span>: {\n                <span class=\"str\">\"name\"</span>: <span class=\"str\">\"שונות\"</span>,\n                <span class=\"str\">\"items\"</span>: {\n                    <span class=\"str\">\"fold1a-key1\"</span>: {<span class=\"str\">\"name\"</span>: <span class=\"str\">\"אפסילון\"</span>},\n                    <span class=\"str\">\"fold1a-key2\"</span>: {<span class=\"str\">\"name\"</span>: <span\n          class=\"str\">\"קפא\"</span>},\n                    <span class=\"str\">\"fold1a-key3\"</span>: {<span class=\"str\">\"name\"</span>: <span\n          class=\"str\">\"אומגה\"</span>}\n                }\n            }\n        }\n    });\n});\n</code></pre>\n      </div>\n\n    </div>\n\n  </div>\n\n</div>\n<!-- /.container -->\n\n<div class=\"container\">\n\n  <!-- Footer -->\n  <footer>\n    <div class=\"row\">\n      <div class=\"col-lg-12\">\n        <p>Copyright &copy; Your Website 2014</p>\n      </div>\n    </div>\n  </footer>\n\n</div>\n<!-- /.container -->\n");
+$templateCache.put("components/footer/footer.html","<div class=\"container\">\n  <p>RTL support for jQuery contextMenu v0.1.0 |\n    <a href=\"https://github.com/avim101/jQuery-contextMenuRtl\">avim101</a> |\n    <a href=\"https://github.com/avim101/jQuery-contextMenuRtl/issues?state=open\">Issues</a>\n  </p>\n</div>\n");
 $templateCache.put("components/modal/modal.html","<div class=\"modal-header\">\n  <button ng-if=\"modal.dismissable\" type=\"button\" ng-click=\"$dismiss()\" class=\"close\">&times;</button>\n  <h4 ng-if=\"modal.title\" ng-bind=\"modal.title\" class=\"modal-title\"></h4>\n</div>\n<div class=\"modal-body\">\n  <p ng-if=\"modal.text\" ng-bind=\"modal.text\"></p>\n  <div ng-if=\"modal.html\" ng-bind-html=\"modal.html\"></div>\n</div>\n<div class=\"modal-footer\">\n  <button ng-repeat=\"button in modal.buttons\" ng-class=\"button.classes\" ng-click=\"button.click($event)\" ng-bind=\"button.text\" class=\"btn\"></button>\n</div>\n");
 $templateCache.put("components/navbar/navbar.html","<div class=\"navbar navbar-default navbar-static-top\" ng-controller=\"NavbarController\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <!--<button class=\"navbar-toggle\" type=\"button\" ng-click=\"nav.isCollapsed = !nav.isCollapsed\">-->\n        <!--<span class=\"sr-only\">Toggle navigation</span>-->\n        <!--<span class=\"icon-bar\"></span>-->\n        <!--<span class=\"icon-bar\"></span>-->\n        <!--<span class=\"icon-bar\"></span>-->\n      <!--</button>-->\n      <a href=\"/\" class=\"navbar-brand\">jquery-contextmenu-rtl</a>\n    </div>\n    <div uib-collapse=\"nav.isCollapsed\" class=\"navbar-collapse collapse\" id=\"navbar-main\">\n      <ul class=\"nav navbar-nav\">\n        <li ng-repeat=\"item in nav.menu\" ui-sref-active=\"active\">\n            <a ui-sref=\"{{item.state}}\">{{item.title}}</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n");}]);
