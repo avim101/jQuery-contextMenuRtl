@@ -37,7 +37,7 @@ $.contextMenu({
     // define which elements trigger this menu
     selector: ".context-menu-selector",
     //if rtl is set to true context menu and sub menues will be opened from right to left
-    rtl:true
+    rtl:true,
     // define the elements of the menu
     items: {
         foo: {name: "Foo", callback: function(key, opt){ alert("Foo!"); }},
