@@ -21,7 +21,7 @@ via bower: <br/>
 ``` 
     bower install jQuery-contextMenuRtl --save 
 ```
-via bower: <br/> 
+via npm: <br/> 
 ``` 
     npm install jquery-contextmenurtl --save 
 ```
