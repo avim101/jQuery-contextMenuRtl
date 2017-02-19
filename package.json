@@ -1,0 +1,24 @@
+{
+  "name": "jquery-contextmenurtl",
+  "version": "1.0.0",
+  "description": "rtl support for jquery contextmenu",
+  "main": "dist/js/jquery.contextMenuRtl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avim101/jQuery-contextMenuRtl.git"
+  },
+  "keywords": [  
+  "contextmenu", "context-menu", "right-click-menu", "right-click", "navigation", "menu",
+    "contextmenurtl", "context-menu-rtl", "right-click-menu-rtl", "navigation rtl", "menu rtl",
+    "navigation-rtl","menu-rtl","contextmenu rtl","context-menu rtl"
+  ],
+  "author": "Avi Maslati, <avim101@gmail.com>, https://github.com/avim101",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avim101/jQuery-contextMenuRtl/issues"
+  },
+  "homepage": "https://github.com/avim101/jQuery-contextMenuRtl#readme"
+}
