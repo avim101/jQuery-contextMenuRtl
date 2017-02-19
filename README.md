@@ -17,10 +17,15 @@ __IMPORTANT: jQuery 3.x.x bracks jQuery UI position. make sure your jQuery versi
     <script src="path_to/jquery.contextMenu.js"></script>
     <script src="path_to/jquery.contextMenuRtl.js"></script>
 ```   
-or via bower: <br/> 
+via bower: <br/> 
 ``` 
     bower install jQuery-contextMenuRtl --save 
 ```
+via bower: <br/> 
+``` 
+    npm install jquery-contextmenurtl --save 
+```
+
 
 ## Dependencies ##
 
